@@ -1,0 +1,42 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background-color: #f8f9fa;
+}
+
+.navbar h4{
+    font-size: 28px;
+    color: #007bff;
+    font-weight: 900;
+}
+.navbar h4 span{
+    color: #222;
+}
+
+.hero-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.profile-container{
+    background-color: #007bff;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.profile-icon{
+    color: #fff;
+    font-size: 20px;
+}
+
+.profile-container:hover{
+    background-color: #0a5a9c;
+    transition: 0.1s all ease-in-out;
+}
