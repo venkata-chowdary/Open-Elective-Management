@@ -14,19 +14,16 @@ function Profile() {
         openElectiveDepartment: ''
     });
 
+    useEffect(()=>{
+        axios.get('http://localhost:4000/data/studentdetails')
+        .then((data)=>console.log(data))
+        .catch((err)=>console.log(err))
+    },[])
+
     useEffect(() => {
-        // Verify token on component mount
         verifyToken();
-        
-        // Fetch student details when isAuthenticated is true
-        if (isAuthenticated) {
-            axios.get('http://localhost:4000/data/getstudentdetails')
-                .then((response) => {
-                    console.log(response)
-                })
-                .catch((err) => console.log(err));
-        }
     }, [isAuthenticated, verifyToken]);
+    
 
     if (!isAuthenticated) {
         return <p>Loading...</p>;
