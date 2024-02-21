@@ -3,6 +3,7 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
 module.exports.userVerification = (req, res,next) => {
+    
     const token = req.cookies.token
     if (!token) {
         return res.json({ status: false })
@@ -14,12 +15,11 @@ module.exports.userVerification = (req, res,next) => {
             const user = await Student.findById(data.id)
             if (user) {
                 req.userData=user
-                res.status=true
+                req.status=true
                 // res.json({ status: true, userData:user.studentEmail})
                 next()
             }
             else{
-                res.status=true
                 return res.json({ status: false })
             } 
         }

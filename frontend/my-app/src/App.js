@@ -13,6 +13,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/registerelective" element={<RegisterElctive/>}></Route>
         <Route path="/profile" element={<Profile/>}></Route>
+        <Route path="/profile/edit/:studentId"></Route>
       </Routes>
     </div>
   );

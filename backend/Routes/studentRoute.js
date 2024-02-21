@@ -3,12 +3,11 @@ const Student = require('../Models/StudentModel')
 
 const router = require('express').Router()
 
-router.get('/getstudentdetails', userVerification,  (req, res) => {
+router.post('/getstudentdetails', userVerification,  (req, res) => {
     const {studentEmail}=req.userData
     Student.findOne({studentEmail})
     .then((data)=>{
         if(data){
-            console.log(data)
             res.send(data)
         }
     })
